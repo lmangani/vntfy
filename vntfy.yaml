@@ -1,0 +1,19 @@
+name: "vntfy"
+arch: "amd64"
+platform: "linux"
+version: "v0.1.0"
+section: "default"
+priority: "extra"
+replaces:
+- vlogql
+provides:
+- vlogql
+maintainer: "Lorenzo Mangani <lorenzo.mangani@gmail.com>"
+description: |
+    ntfy.sh command line tool
+vendor: "QXIP"
+homepage: "http://ntfy.sh"
+license: "MIT"
+bindir: "/usr/local/bin"
+files:
+  vntfy: "/usr/local/bin/vntfy"

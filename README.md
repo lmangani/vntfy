@@ -1,3 +1,5 @@
+<img src="https://ntfy.sh/static/media/ntfy.813163689f875c027536f701421d9b3d.svg" width=100/>
+
 # vntfy
 Barebone client for [ntfy.sh](https://ntfy.sh/) in [v](https://vlang.io)
 

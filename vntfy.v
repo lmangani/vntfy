@@ -7,8 +7,6 @@ import v.vmod
 import net.http
 import net.websocket
 
-//import x.json2
-
 fn set_value(s string) ?string {
 	if s != '' {
 		return s
@@ -16,7 +14,7 @@ fn set_value(s string) ?string {
 	return none
 }
 
-// WORKS!
+// GET PUB
 fn pubs(api string){
 	if os.args.len < 3 { 
 	  exit(1) 
@@ -26,13 +24,12 @@ fn pubs(api string){
 	msg := os.args[3..].join(' ')
 	eprintln('cmd: $cmd topic: $topic msg: $msg')
 
-	//data := http.post('$api/$topic/json', $msg)
 	data := http.get_text('$api/$topic/publish?message=$msg')
 	println(data)
 
 }
 
-// WIP
+// WS SUB
 fn subs(api string, out string) {
 	if os.args.len < 2 { 
 	  exit(1) 
@@ -52,12 +49,10 @@ fn subs(api string, out string) {
 	}, opt)
 
 	ws.connect() or { println('error on connect: $err') }
-
 	ws.listen() or { println('error on listen $err') }
 	unsafe {
 		ws.free()
 	}
-
 
 }
 
@@ -76,8 +71,10 @@ fn main() {
 	cmd := os.args[1]
 	
 	match cmd {
-		'publish' { pubs(env_api, env_out) }
+		'publish' { pubs(env_api) }
+		'pub' { pubs(env_api) }
 		'subscribe' { subs(env_api, env_out) }
+		'sub' { subs(env_api, env_out) }
 		else { println('unsupported command') }
 	}
 }

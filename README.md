@@ -5,6 +5,8 @@
 # vntfy
 Barebone client for [ntfy.sh](https://ntfy.sh/) in [v](https://vlang.io)
 
+> ntfy (pronounce: notify) is a simple HTTP-based pub-sub notification service. It allows you to send notifications to any web-enabled device without signup, cost or setup. It's also open source if you want to run your own.
+
 
 ### Instructions
 Download a [binary release](https://github.com/lmangani/vntfy/releases/latest/download/vntfy) or build from source

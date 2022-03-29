@@ -16,7 +16,7 @@ fn set_value(s string) ?string {
 
 // GET PUB
 fn pubs(api string){
-	if os.args.len < 3 { 
+	if os.args.len == 0 { 
 	  exit(1) 
 	}
 	cmd := os.args[1]
@@ -68,7 +68,12 @@ fn main() {
 	env_api := set_value(os.getenv('API')) or { 'https://ntfy.sh' }
 	env_out := set_value(os.getenv('OUT')) or { 'json' }
 
-	cmd := os.args[1]
+	cmd := os.args[1] or { '' }
+
+	if cmd.len == 0 {
+		println(fp.usage())
+		exit(1)
+	}
 	
 	match cmd {
 		'publish' { pubs(env_api) }

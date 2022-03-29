@@ -12,15 +12,15 @@ Barebone client for [ntfy.sh](https://ntfy.sh/) in [v](https://vlang.io)
 Download a [binary release](https://github.com/lmangani/vntfy/releases/latest/download/vntfy) or build from source
 
 ### 🔎 Usage
-#### Subscribe (WS/S)
+#### [Subscribe](https://ntfy.sh/docs/subscribe/api/) (WS/S)
 ```
 vntfy subscribe mytopic
 ```
-#### Publish (HTTP/S POST)
+#### [Publish](https://ntfy.sh/docs/publish/) (HTTP/S POST)
 ```
 vntfy publish mytopic hello there!
 ```
-#### Custom NTFY API
+#### Use custom NTFY API
 ```
 API=https://my.own.ntfy vntfy publish mytopic hello there!
 ```
